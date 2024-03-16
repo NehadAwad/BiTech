@@ -39,6 +39,8 @@ const originalSend = app.response.send;
     this.responseBody = body;
 };
 
+import userRouter from "./router/user"
+app.use("/api", userRouter);
 
 app.get("/ping", (req, res) => {
     return res.status(200).json({ message: "PING PONG" });
